@@ -1,3 +1,4 @@
+// icons
 import IconLocation from "../assets/footer/footer-icon-location.svg";
 import IconCell from "../assets/footer/footer-icon-cell.svg";
 import IconTwitter from "../assets/footer/footer-icon-twitter.svg";

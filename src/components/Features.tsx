@@ -1,3 +1,6 @@
+// motion
+import { motion } from "motion/react";
+
 // images
 import FeaturesImage1 from "../assets/features/features-image-1.png";
 import FeaturesImage2 from "../assets/features/features-image-2.png";
@@ -10,7 +13,13 @@ import Vector3 from "../assets/features/features-vector-3.svg";
 function Features() {
   return (
     <section className="flex flex-col justify-center items-center gap-15">
-      <div className="flex flex-col justify-center items-center gap-7">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col justify-center items-center gap-7"
+      >
         <h1 className="text-white w-70 md:w-170 font-light text-[52px] md:text-[80px] leading-15 md:leading-22 tracking-[0.2px] text-center">
           FEATURES
         </h1>
@@ -18,8 +27,14 @@ function Features() {
           Most calendars are designed for teams. Slate is designed for
           freelancers who want a simple way to plan their schedule.
         </p>
-      </div>
-      <div className="flex flex-col xl:flex-row justify-center items-center xl:items-end gap-5">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col xl:flex-row justify-center items-center xl:items-end gap-5"
+      >
         <div className="relative inline-block">
           <img src={FeaturesImage1} alt="image" className="block" />
 
@@ -61,7 +76,7 @@ function Features() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,6 +1,9 @@
 // react
 import { useState } from "react";
 
+// motion
+import { motion } from "motion/react";
+
 // images
 import logo from "../assets/navbar/logo.svg";
 import hamburguer from "../assets/navbar/hamburguer.svg";
@@ -8,7 +11,14 @@ import hamburguer from "../assets/navbar/hamburguer.svg";
 function Navbar() {
   const [isActiveHamburguer, setIsActiveHamburguer] = useState(false);
   return (
-    <div>
+    <motion.div
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+    >
       <nav className="max-w-274.25 py-2 px-5 mx-auto sticky flex justify-between items-center">
         <img src={logo} alt="logo" className="h-12" />
         {/* Tablet and desktop navigation */}
@@ -43,7 +53,13 @@ function Navbar() {
       </nav>
       {/* Open Hamburguer */}
       {isActiveHamburguer ? (
-        <div className="flex md:hidden flex-col border-t border-white p-2 gap-7">
+        <motion.div
+          initial={{ y: -20, opacity: 0 }} // começa em cima
+          animate={{ y: 0, opacity: 1 }} // desce e aparece
+          exit={{ y: -20, opacity: 0 }} // sobe e some
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex md:hidden flex-col border-t border-white p-2 gap-7"
+        >
           <button className="hover:text-white/75 text-white text-lg">
             Home
           </button>
@@ -56,9 +72,9 @@ function Navbar() {
           <button className="hover:text-white/75 text-white text-lg">
             Contact
           </button>
-        </div>
+        </motion.div>
       ) : null}
-    </div>
+    </motion.div>
   );
 }
 
