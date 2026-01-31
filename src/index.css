@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("../font/graphik.css");
 
 body {
   background-color: #181818;
@@ -6,4 +7,9 @@ body {
 
 button {
   cursor: pointer;
+}
+
+html,
+body {
+  font-family: "Graphik", Arial, sans-serif;
 }
