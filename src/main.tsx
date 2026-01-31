@@ -12,6 +12,7 @@ import Features from "./components/Features";
 import Contents from "./components/Contents";
 import Gallery from "./components/Gallery";
 import Partners from "./components/Partners";
+import Testimonials from "./components/Testimonials";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,5 +22,6 @@ createRoot(document.getElementById("root")!).render(
     <Contents />
     <Gallery />
     <Partners />
+    <Testimonials />
   </StrictMode>,
 );
